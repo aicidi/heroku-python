@@ -1,18 +1,16 @@
-FROM python:3.7-alpine
+FROM ubuntu:18.04 
 
 WORKDIR /code
-
-ENV FLASK_APP app.py
 
 EXPOSE 5000
 EXPOSE $PORT
 
-RUN apk add --no-cache gcc musl-dev linux-headers
+RUN apt-get update && apt-get install -y gcc make python3 python3-pip python3-dev wget redis-server
 
 COPY requirements.txt requirements.txt
-
-RUN pip install -r requirements.txt
+#RUN wget http://download.redis.io/redis-stable.tar.gz && tar xvzf redis-stable.tar.gz && cd redis-stable && make -j4 && make install && cd ..
+RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]
