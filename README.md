@@ -1,6 +1,6 @@
 # heroku-python
 
-heroku docker example  
+heroku docker build example  
 flask test widh redis
 
 redis install in Dockerfile  
