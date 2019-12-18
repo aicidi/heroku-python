@@ -1,3 +1,4 @@
+# from https://docs.docker.com/compose/gettingstarted/
 import time
 import os
 import redis
