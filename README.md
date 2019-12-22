@@ -1,7 +1,7 @@
 # heroku-python
 
 heroku docker build example  
-flask test widh redis
+flask with redis
 
 redis install in Dockerfile  
 and start in python ``os.system``
